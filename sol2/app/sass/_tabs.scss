@@ -1,0 +1,95 @@
+.tabs-controller {
+    background: $white;
+    color: $black;
+    margin: 50px 10%;
+
+    @media (max-width: $screen-xs-max) {
+        margin: 50px 15px;
+    }
+
+    .tab-links-wrapper {
+        display: table;
+        width: 100%;
+        padding: 0px;
+
+        .tab-link {
+            display: table-cell;
+            vertical-align: middle;
+            background: $gray;
+            border-right: 2px solid $white;
+
+            a {
+                display: block;
+                padding: 10px 5px 10px 20px;
+                color: $darkgray;
+                font-size: $font-20;
+                font-weight: bold;
+            }
+
+            &.active {
+                a {
+                    color: $gray;
+                }
+
+                background: transparent;
+            }
+        }
+
+        @media (max-width: $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .tab-content {
+        color: $darkgray;
+        overflow: hidden;
+
+        .tab-link-mob {
+            color: $darkgray;
+            background: $gray;
+            font-size: $font-20;
+            font-weight: bold;
+            border-bottom: 2px solid $white;
+
+            a {
+                display: block;
+                padding: 10px 5px 10px 5px;
+            }
+
+            @media (min-width: $screen-sm-min) {
+                display: none;
+            }
+        }
+
+        .content-wrapper {
+            max-height: 0px;
+            overflow: hidden;
+            transition: none;
+            -webkit-transition: none;
+            -moz-transition: none;
+            -ms-transition: none;
+
+            @media (max-width: $screen-xs-max) {
+                // transition: all 0.15s linear;
+                // -webkit-transition: all 0.15s linear;
+                // -moz-transition: all 0.25s linear;
+                // -ms-transition: all 0.25s linear;
+            }
+        }
+
+        &.active {
+            .tab-link-mob {
+                color: $gray;
+                background: transparent;
+            }
+
+            .content-wrapper {
+                max-height: 1500px;
+                transition: all 1s linear;
+                -webkit-transition: all 1s linear;
+                -moz-transition: all 1s linear;
+                -ms-transition: all 1s linear;
+            }
+        }
+    }
+}
